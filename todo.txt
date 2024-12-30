@@ -1,0 +1,9 @@
+*   Create a component named as SplitScreen
+*   This component accepts two component as Props : Left and Right
+
+*   Render this two component inside seperate div. these two seperate div will be wrapped by another wrapper div.
+    This allows it to work independently irrespective of where this component is placed inside the page.
+    
+*   Call this SplitScreen component from the App.
+*   Create these two components left and right and paas it to the SplitScreen component.
+*   Do some styling in order to look it better
