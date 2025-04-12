@@ -1,10 +1,16 @@
 // import ScreenSplitter from "./components/layouts/ScreenSplitter";
 // import CurrentUserLoader from "./components/container/CurrentUserLoader.jsx";
+import axios from "axios";
 import UserInfo from "./components/container/UserInfo.jsx";
-import BookInfo from "./components/container/BookInfo.jsx";
+import DataSource from "./components/container/DataSource.jsx";
+// import BookInfo from "./components/container/BookInfo.jsx";
 // import UserLoader from "./components/container/UserLoader.jsx";
-import ResourceLoader from "./components/container/ResourceLoader.jsx";
+// import ResourceLoader from "./components/container/ResourceLoader.jsx";
 function App() {
+  const getDataFromServer = async (url) => {
+    const response = await axios.get(url);
+    return response.data;
+  };
   return (
     <>
       {/* <ScreenSplitter /> */}
@@ -22,7 +28,7 @@ function App() {
         <UserInfo />
       </UserLoader> */}
 
-      <ResourceLoader
+      {/* <ResourceLoader
         resourceUrl={"http://localhost:9090/users/2"}
         resourceName={"user"}
       >
@@ -39,7 +45,14 @@ function App() {
         resourceName={"book"}
       >
         <BookInfo />
-      </ResourceLoader>
+      </ResourceLoader> */}
+
+      <DataSource
+        getData={() => getDataFromServer("http://localhost:9090/users/2")}
+        resourceName={"user"}
+      >
+        <UserInfo />
+      </DataSource>
     </>
   );
 }
