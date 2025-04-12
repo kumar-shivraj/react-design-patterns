@@ -19,6 +19,7 @@ const UserLoader = ({ userId, children }) => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child, { user });
         }
+        return child;
       })}
     </>
   );

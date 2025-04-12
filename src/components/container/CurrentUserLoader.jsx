@@ -18,6 +18,7 @@ const CurrentUserLoader = ({ children }) => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child, { user });
         }
+        return child;
       })}
     </>
   );

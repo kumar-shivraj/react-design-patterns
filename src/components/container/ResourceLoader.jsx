@@ -16,6 +16,7 @@ const ResourceLoader = ({ resourceUrl, resourceName, children }) => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child, { [resourceName]: resource });
         }
+        return child;
       })}
     </>
   );
