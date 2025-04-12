@@ -2,7 +2,8 @@
 // import CurrentUserLoader from "./components/container/CurrentUserLoader.jsx";
 import axios from "axios";
 import UserInfo from "./components/container/UserInfo.jsx";
-import DataSource from "./components/container/DataSource.jsx";
+// import DataSource from "./components/container/DataSource.jsx";
+import DataSourceWithRender from "./components/container/DataSourceWithRender.jsx";
 // import BookInfo from "./components/container/BookInfo.jsx";
 // import UserLoader from "./components/container/UserLoader.jsx";
 // import ResourceLoader from "./components/container/ResourceLoader.jsx";
@@ -47,12 +48,17 @@ function App() {
         <BookInfo />
       </ResourceLoader> */}
 
-      <DataSource
+      {/* <DataSource
         getData={() => getDataFromServer("http://localhost:9090/users/2")}
         resourceName={"user"}
       >
         <UserInfo />
-      </DataSource>
+      </DataSource> */}
+
+      <DataSourceWithRender
+        getData={() => getDataFromServer("http://localhost:9090/users/2")}
+        render={(resource) => <UserInfo user={resource} />}
+      ></DataSourceWithRender>
     </>
   );
 }
