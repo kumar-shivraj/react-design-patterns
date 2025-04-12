@@ -6,6 +6,8 @@ const DataSource = ({ getData = () => {}, resourceName, children }) => {
   useEffect(() => {
     (async () => {
       const data = await getData();
+      console.log("data: ", data);
+      console.log("getdata : ", getData);
       setResource(data);
     })();
   }, [getData]);
@@ -16,6 +18,7 @@ const DataSource = ({ getData = () => {}, resourceName, children }) => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child, { [resourceName]: resource });
         }
+        return child;
       })}
     </>
   );
