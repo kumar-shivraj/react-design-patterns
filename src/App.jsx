@@ -1,42 +1,44 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Products from "./views/products/Products";
-import AddProduct from "./views/products/AddProduct";
-import EditProduct from "./views/products/EditProduct";
-import DeleteProduct from "./views/products/DeleteProduct";
-import ViewProduct from "./views/products/ViewProduct";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import Products from "./views/products/Products";
+// import AddProduct from "./views/products/AddProduct";
+// import EditProduct from "./views/products/EditProduct";
+// import DeleteProduct from "./views/products/DeleteProduct";
+// import ViewProduct from "./views/products/ViewProduct";
 
-import Login from "./views/auth/Login";
-import Register from "./views/auth/Register";
-import ForgotPassword from "./views/auth/ForgotPassword";
-import ResetPassword from "./views/auth/ResetPassword";
+import UnControlledForm from "./components/controlled-uncontrolled/unControlled/UnControlledForm";
 
-import UsersList from "./views/users/UsersList";
-import AddUser from "./views/users/AddUser";
-import EditUser from "./views/users/EditUser";
-import ViewUser from "./views/users/ViewUser";
-import UserSettings from "./views/users/UserSettings";
+// import Login from "./views/auth/Login";
+// import Register from "./views/auth/Register";
+// import ForgotPassword from "./views/auth/ForgotPassword";
+// import ResetPassword from "./views/auth/ResetPassword";
 
-import Dashboard from "./views/dashboard/Dashboard";
-import SummaryCards from "./views/dashboard/SummaryCards";
-import AnalyticsCharts from "./views/dashboard/AnalyticsCharts";
+// import UsersList from "./views/users/UsersList";
+// import AddUser from "./views/users/AddUser";
+// import EditUser from "./views/users/EditUser";
+// import ViewUser from "./views/users/ViewUser";
+// import UserSettings from "./views/users/UserSettings";
 
-import OrdersList from "./views/orders/OrdersList";
-import ViewOrder from "./views/orders/ViewOrder";
-import UpdateOrderStatus from "./views/orders/UpdateOrderStatus";
+// import Dashboard from "./views/dashboard/Dashboard";
+// import SummaryCards from "./views/dashboard/SummaryCards";
+// import AnalyticsCharts from "./views/dashboard/AnalyticsCharts";
 
-import ProfileSettings from "./views/settings/ProfileSettings";
+// import OrdersList from "./views/orders/OrdersList";
+// import ViewOrder from "./views/orders/ViewOrder";
+// import UpdateOrderStatus from "./views/orders/UpdateOrderStatus";
 
-import NotificationsList from "./views/notifications/NotificationsList";
-import NotificationSettings from "./views/settings/NotificationSettings";
+// import ProfileSettings from "./views/settings/ProfileSettings";
 
-import AppPreferences from "./views/settings/AppPreferences";
+// import NotificationsList from "./views/notifications/NotificationsList";
+// import NotificationSettings from "./views/settings/NotificationSettings";
 
-import ReportsDashboard from "./views/reports/ReportsDashboard";
-import SalesReport from "./views/reports/SalesReport";
-import TrafficAnalytics from "./views/reports/TrafficAnalytics";
+// import AppPreferences from "./views/settings/AppPreferences";
 
-import NotFound from "./views/error/NotFound";
-import ServerError from "./views/error/ServerError";
+// import ReportsDashboard from "./views/reports/ReportsDashboard";
+// import SalesReport from "./views/reports/SalesReport";
+// import TrafficAnalytics from "./views/reports/TrafficAnalytics";
+
+// import NotFound from "./views/error/NotFound";
+// import ServerError from "./views/error/ServerError";
 
 // import ScreenSplitter from "./components/layouts/ScreenSplitter";
 // import CurrentUserLoader from "./components/container/CurrentUserLoader.jsx";
@@ -131,74 +133,71 @@ function App() {
   //     </Routes>
   //   </BrowserRouter>
   // );
+  // return (
+  //   <BrowserRouter>
+  //     <Routes>
+  //       {/* Products */}
+  //       <Route path="/products">
+  //         <Route index element={<Products />} />
+  //         <Route path="add" element={<AddProduct />} />
+  //         <Route path=":id/edit" element={<EditProduct />} />
+  //         <Route path=":id/delete" element={<DeleteProduct />} />
+  //         <Route path=":id" element={<ViewProduct />} />
+  //       </Route>
+  //       <Route path="/auth">
+  //         <Route path="login" element={<Login />} />
+  //         <Route path="register" element={<Register />} />
+  //         <Route path="forgot-password" element={<ForgotPassword />} />
+  //         <Route path="reset-password" element={<ResetPassword />} />
+  //       </Route>
+  //       {/* Users */}
+  //       <Route path="/users">
+  //         <Route index element={<UsersList />} />
+  //         <Route path="add" element={<AddUser />} />
+  //         <Route path=":id/edit" element={<EditUser />} />
+  //         <Route path=":id" element={<ViewUser />} />
+  //         <Route path="settings" element={<UserSettings />} />
+  //       </Route>
+  //       <Route path="/dashboard">
+  //         <Route index element={<Dashboard />} />
+  //         <Route path="summary" element={<SummaryCards />} />
+  //         <Route path="analytics" element={<AnalyticsCharts />} />
+  //       </Route>
+  //       {/* Orders */}
+  //       <Route path="/orders">
+  //         <Route index element={<OrdersList />} />
+  //         <Route path=":id" element={<ViewOrder />} />
+  //         <Route path=":id/update" element={<UpdateOrderStatus />} />
+  //       </Route>
+  //       {/* Settings */}
+  //       <Route path="/settings">
+  //         <Route index element={<ProfileSettings />} />
+  //         <Route path="profile" element={<ProfileSettings />} />
+  //         <Route path="notifications" element={<NotificationSettings />} />
+  //         <Route path="preferences" element={<AppPreferences />} />
+  //       </Route>
+  //       {/* Notifications */}
+  //       <Route path="/notifications">
+  //         <Route index element={<NotificationsList />} />
+  //         <Route path="settings" element={<NotificationSettings />} />
+  //       </Route>
+  //       {/* Reports */}
+  //       <Route path="/reports">
+  //         <Route index element={<ReportsDashboard />} />
+  //         <Route path="sales" element={<SalesReport />} />
+  //         <Route path="traffic" element={<TrafficAnalytics />} />
+  //       </Route>
+  //       {/* Error Routes */}
+  //       <Route path="/500" element={<ServerError />} />
+  //       <Route path="*" element={<NotFound />} />
+  //     </Routes>
+  //   </BrowserRouter>
+  // );
 
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* Products */}
-        <Route path="/products">
-          <Route index element={<Products />} />
-          <Route path="add" element={<AddProduct />} />
-          <Route path=":id/edit" element={<EditProduct />} />
-          <Route path=":id/delete" element={<DeleteProduct />} />
-          <Route path=":id" element={<ViewProduct />} />
-        </Route>
-
-        <Route path="/auth">
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="forgot-password" element={<ForgotPassword />} />
-          <Route path="reset-password" element={<ResetPassword />} />
-        </Route>
-
-        {/* Users */}
-        <Route path="/users">
-          <Route index element={<UsersList />} />
-          <Route path="add" element={<AddUser />} />
-          <Route path=":id/edit" element={<EditUser />} />
-          <Route path=":id" element={<ViewUser />} />
-          <Route path="settings" element={<UserSettings />} />
-        </Route>
-
-        <Route path="/dashboard">
-          <Route index element={<Dashboard />} />
-          <Route path="summary" element={<SummaryCards />} />
-          <Route path="analytics" element={<AnalyticsCharts />} />
-        </Route>
-
-        {/* Orders */}
-        <Route path="/orders">
-          <Route index element={<OrdersList />} />
-          <Route path=":id" element={<ViewOrder />} />
-          <Route path=":id/update" element={<UpdateOrderStatus />} />
-        </Route>
-
-        {/* Settings */}
-        <Route path="/settings">
-          <Route index element={<ProfileSettings />} />
-          <Route path="profile" element={<ProfileSettings />} />
-          <Route path="notifications" element={<NotificationSettings />} />
-          <Route path="preferences" element={<AppPreferences />} />
-        </Route>
-
-        {/* Notifications */}
-        <Route path="/notifications">
-          <Route index element={<NotificationsList />} />
-          <Route path="settings" element={<NotificationSettings />} />
-        </Route>
-
-        {/* Reports */}
-        <Route path="/reports">
-          <Route index element={<ReportsDashboard />} />
-          <Route path="sales" element={<SalesReport />} />
-          <Route path="traffic" element={<TrafficAnalytics />} />
-        </Route>
-
-        {/* Error Routes */}
-        <Route path="/500" element={<ServerError />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <UnControlledForm />
+    </>
   );
 }
 
