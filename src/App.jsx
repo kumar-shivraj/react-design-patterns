@@ -5,7 +5,8 @@
 // import DeleteProduct from "./views/products/DeleteProduct";
 // import ViewProduct from "./views/products/ViewProduct";
 
-import UnControlledForm from "./components/controlled-uncontrolled/unControlled/UnControlledForm";
+// import UnControlledForm from "./components/controlled-uncontrolled/unControlled/UnControlledForm";
+import ControlledForm from "./components/controlled-uncontrolled/controlled/ControlledForm";
 
 // import Login from "./views/auth/Login";
 // import Register from "./views/auth/Register";
@@ -196,7 +197,8 @@ function App() {
 
   return (
     <>
-      <UnControlledForm />
+      {/* <UnControlledForm /> */}
+      <ControlledForm />
     </>
   );
 }
